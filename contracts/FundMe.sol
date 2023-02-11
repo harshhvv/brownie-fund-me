@@ -35,7 +35,7 @@ contract FundMe {
 
     function fund() public payable {
         // 18 digit number to be compared with donated amount
-        uint256 minimumUSD = 50 * 10**18;
+        uint256 minimumUSD = 10 * 10**18;
 
         //is the donated amount less than 50USD?
         require(
@@ -77,7 +77,7 @@ contract FundMe {
     }
 
     function getEntranceFee() public view returns (uint256) {
-        uint256 minimumUSD = 50 * 10**18;
+        uint256 minimumUSD = 10 * 10**18;
         uint256 price = getPrice();
         uint256 precision = 1 * 10**18;
         return (minimumUSD * precision) / price;

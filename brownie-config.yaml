@@ -4,8 +4,13 @@ dependencies:
 dotenv: .env
 
 networks:
+  default: development
   goerli:
     eth_usd_price_feed_address: "0xD4A33860578DE61DBABDC8BFDB98FD742FA7028E"
+  mainnet-fork-dev: 
+    eth_usd_price_feed_address: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    
+    
     
 wallets:
   from_key: ${PRIVATE_KEY}

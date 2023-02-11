@@ -1,18 +1,14 @@
-from brownie import FundMe, network, config, MockV3Aggregator
-from scripts.helpful_scripts import (
-    get_account,
-    deploy_mocks,
-    LOCAL_BLOCKCHAIN_ENVIRONMENTS,
-)
-from web3 import Web3
+from brownie import FundMe
+from scripts.helpful_scripts import get_account
 
 
 def fund():
-    account = get_account()
     fund_me = FundMe[-1]
-    entrance_fee = fund_me.getEntranceFee()
+    account = get_account()
+    entrance_fee = fund_me.getEntranceFee() + 2000
     print(entrance_fee)
-    print("funding")
+    print(f"The current entry fee is {entrance_fee}")
+    print("Funding")
     fund_me.fund({"from": account, "value": entrance_fee})
 
 
